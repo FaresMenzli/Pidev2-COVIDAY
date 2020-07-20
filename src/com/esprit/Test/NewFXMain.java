@@ -6,6 +6,7 @@
 package com.esprit.Test;
 import com.esprit.utils.* ;
 import GUI.TestDepFXMLController;
+//import java.awt.Image;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,7 +18,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.image.Image;
+
 import javafx.stage.Stage;
+import javax.swing.text.html.StyleSheet;
 
 /**
  *
@@ -30,7 +34,12 @@ public class NewFXMain extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/GUI/TestDepFXML.fxml"));
             Scene scene = new Scene(root) ;
+            
             primaryStage.setScene(scene);
+         primaryStage.setTitle("Test de despistage");
+            primaryStage.getIcons().add(new Image("icon2.png"));
+           // scene.getStylesheets().add();
+            //scene.getStyleSheets().add("DarkTheme") ;
             primaryStage.show();
         } catch (IOException ex) {
             System.out.println(ex);

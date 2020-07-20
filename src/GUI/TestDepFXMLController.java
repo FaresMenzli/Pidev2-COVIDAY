@@ -35,9 +35,8 @@ public class TestDepFXMLController implements Initializable {
 
     @FXML
     private Button btnsuivant;
-   
-   
-Alert alert ;
+
+    Alert alert;
 //    
     private Connection con = DataBase.getInstance().getConnection();
     private Statement ste;
@@ -80,9 +79,8 @@ Alert alert ;
 //           System.out.println(ex);}
         // TODO
         //btnaffiche.setDisable(true);
-       
         ServiceQuestion ser = new ServiceQuestion();
-        System.out.println("le nbre est "+ser.NbreQuestion()); 
+        System.out.println("le nbre est " + ser.NbreQuestion());
         //Question1.setText(ser.afficheQuestion()); 
         System.out.println(score);
         //   while (i < 10) {
@@ -96,51 +94,52 @@ Alert alert ;
             @Override
             public void handle(ActionEvent event) {
                 rep1_1.setVisible(true);
-        rep1_2.setVisible(true);
-        rep1_3.setVisible(true);
+                rep1_2.setVisible(true);
+                rep1_3.setVisible(true);
 
                 System.out.println("i=" + i);
-                
+
                 Question1.setText(ser.TestafficheQ(i));
                 if (rep1_1.isSelected()) {
                     score += 5;
+                    ser.addrep(i-1,  "OUI");
                 } else if (rep1_2.isSelected()) {
                     score += 3;
+                    ser.addrep(i-1, "Je ne sais Pas");
                 } else if (rep1_3.isSelected()) {
                     score += 0;
+                     ser.addrep(i-1,  "Non");
                 }
-                 //alert = new Alert(Alert.AlertType.ERROR, "You must have a choice", buttons) ; checkpoint
+                //alert = new Alert(Alert.AlertType.ERROR, "You must have a choice", buttons) ; checkpoint
                 System.out.println(score);
                 i++;
-                if (i-1 > ser.NbreQuestion()) {
+
+                if (i - 1 > ser.NbreQuestion()) {
                     rep1_1.setVisible(false);
-        rep1_2.setVisible(false);
-        rep1_3.setVisible(false);
+                    rep1_2.setVisible(false);
+                    rep1_3.setVisible(false);
                     btnsuivant.setDisable(true);
                     btnAffiche.setDisable(false);
                     affichage.setVisible(true);
                     btnAffiche.setOnAction(new EventHandler<ActionEvent>() {
-                        
 
-            @Override
-            public void handle(ActionEvent event) {
-                String rep;
-                int res=score/ser.NbreQuestion() ;
-                if (res >= 3){ rep="Vous etes en Danger" ;}
-                else if (res < 3 && res >1) {rep=" votre cas n'est pas critique mais ...";}
-                else rep=" vous n'etes pas malade" ;
-                
-                affichage.setText( rep) ;
-                System.out.println("votre score est :"+score);
-            }});
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                        @Override
+                        public void handle(ActionEvent event) {
+                            String rep;
+                            int res = score / ser.NbreQuestion();
+                            if (res >= 3) {
+                                rep = "Vous etes en Danger";
+                            } else if (res < 3 && res > 1) {
+                                rep = " votre cas n'est pas critique mais ...";
+                            } else {
+                                rep = " vous n'etes pas malade";
+                            }
+
+                            affichage.setText(rep);
+                            System.out.println("votre score est :" + score);
+                        }
+                    });
+
                 }
             }
 

@@ -7,11 +7,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.TestDepFXMLController">
    <children>
-      <Label fx:id="Question1" layoutX="140.0" layoutY="94.0" text="Question 1" />
+      <Label fx:id="Question1" layoutX="140.0" layoutY="94.0" text="Bienvenue " />
       <Button fx:id="btnsuivant" layoutX="477.0" layoutY="306.0" mnemonicParsing="false" text="suivant" />
-      <RadioButton fx:id="rep1_1" layoutX="213.0" layoutY="140.0" mnemonicParsing="false" text="rep1" />
-      <RadioButton fx:id="rep1_2" layoutX="214.0" layoutY="183.0" mnemonicParsing="false" text="rep2" />
-      <RadioButton fx:id="rep1_3" layoutX="214.0" layoutY="230.0" mnemonicParsing="false" text="rep3" />
+      <RadioButton fx:id="rep1_1" layoutX="213.0" layoutY="140.0" mnemonicParsing="false" text="oui" />
+      <RadioButton fx:id="rep1_2" layoutX="214.0" layoutY="183.0" mnemonicParsing="false" text="je ne sais pas" />
+      <RadioButton fx:id="rep1_3" layoutX="214.0" layoutY="230.0" mnemonicParsing="false" text="non" />
       <Button fx:id="btnAffiche" layoutX="375.0" layoutY="306.0" mnemonicParsing="false" text="Resultat" />
       <Label fx:id="affichage" layoutX="88.0" layoutY="72.0" prefHeight="206.0" prefWidth="410.0" />
    </children>

@@ -90,6 +90,16 @@ public class ServiceQuestion {
      
      }
      
+     public void addrep (int Question_id , String rep){
+         
+        try {
+            //ste.execute("insert into reponse values("+Question_id+","+user_id+",'"+rep+"');") ;
+            ste.execute("insert into reponse ( id_Q , rep) values("+Question_id+",'"+rep+"');") ;
+        } catch (SQLException ex) {
+             System.out.println(ex);
+        }
+     }
+     
     public String TestafficheQ(int i) {
         String question = "";
 
